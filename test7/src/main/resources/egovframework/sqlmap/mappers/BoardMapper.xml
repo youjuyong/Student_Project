@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.dao.BoardDAO">
+	<select id="getBoards" resultType="map">
+		SELECT * FROM student ORDER BY idx ASC
+	</select>
+
+	<select id="getCounts" resultType="int">
+		SELECT count(*) FROM student
+	</select>
+
+	<insert id="insertStudent" parameterType="egovframework.example.dto.Board" >
+	INSERT INTO student(
+		idx,
+		name,
+		department,
+		address,
+		gender,
+		score,
+		grade
+		) 
+	values(
+		#{idx},
+		#{name},
+		#{department},
+		#{address},
+		#{gender},
+		#{score},
+		#{grade}
+	)
+	</insert>
+
+	<select id="getDetail" resultType="map" parameterType="egovframework.example.dto.Board">
+		SELECT * FROM student where idx=#{idx}
+	</select>
+	
+	<update id="updateStudent" parameterType="egovframework.example.dto.Board">
+		UPDATE student SET address=#{address}, score=#{score} ,grade=#{grade} WHERE idx=#{idx}
+	</update>
+
+	<delete id="deleteStudent" parameterType="int">
+		DELETE FROM student WHERE idx=#{idx}
+	</delete>
+	
+</mapper>
