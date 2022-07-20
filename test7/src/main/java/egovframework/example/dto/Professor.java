@@ -3,18 +3,36 @@ package egovframework.example.dto;
 public class Professor {
 	private int p_idx;
 	private String p_name;
+	private int p_password;
 	private String p_birth;
 	private String p_department;
 	private int ps_idx;
 	private String p_address;
 	private String p_email;
 	
-	@Override
-	public String toString() {
-		return "Professor [p_idx=" + p_idx + ", p_name=" + p_name + ", p_birth=" + p_birth + ", p_department="
-				+ p_department + ", ps_idx=" + ps_idx + ", p_address=" + p_address + ", p_email=" + p_email + "]";
+	public Professor() {
+		
 	}
 	
+	public Professor(String p_name2, int p_password2) {
+		// TODO Auto-generated constructor stub
+		this.p_name = p_name2;
+		this.p_password = p_password2;
+	}
+
+	@Override
+	public String toString() {
+		return "Professor [p_idx=" + p_idx + ", p_name=" + p_name + ", p_password=" + p_password + ", p_birth="
+				+ p_birth + ", p_department=" + p_department + ", ps_idx=" + ps_idx + ", p_address=" + p_address
+				+ ", p_email=" + p_email + "]";
+	}
+	
+	public void setP_password(int p_password) {
+		this.p_password = p_password;
+	}
+	public int getP_password() {
+		return p_password;
+	}
 	public int getP_idx() {
 		return p_idx;
 	}

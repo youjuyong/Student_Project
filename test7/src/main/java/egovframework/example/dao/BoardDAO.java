@@ -14,4 +14,5 @@ public interface BoardDAO {
 	List<Map> getDetail(int idx);
 	void updateStudent(Board board);
 	void deleteStudent(int idx);
+	String getpName(int psc_idx);
 }

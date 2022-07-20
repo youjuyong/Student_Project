@@ -100,7 +100,7 @@ a {
   
   }
   a{
-  color:white;
+  color:black;
   }
 header {  
   height: 75px;
@@ -149,13 +149,13 @@ h1, p {
 		<c:forEach items="${pro}" var="professor_list" varStatus="i">
 	<tbody>
 		<tr>	
-			<td>${professor_list.IDX}</td>
-			<td><a href="detail.do?idx=${student_list.IDX}&address=${student_list.ADDRESS}&score=${student_list.SCORE}">${professor_list.NAME}</a></td>
-			<td>${professor_list.DEPARTMENT}</td>
-			<td>${professor_list.ADDRESS}</td>
-			<td>${professor_list.GENDER}</td>
-			<td>${professor_list.SCORE}</td>
-			<td>${professor_list.GRADE}</td>
+			<td>${professor_list.P_IDX}</td>
+			<td><a href="student_select.do?p_idx=${professor_list.P_IDX}&p_name=${professor_list.P_NAME}">${professor_list.P_NAME}</a></td>
+			<td>${professor_list.P_BIRTH}</td>
+			<td>${professor_list.P_DEPARTMENT}</td>
+			<td>${professor_list.PS_IDX}</td>
+			<td>${professor_list.P_ADDRESS}</td>
+			<td>${professor_list.P_EMAIL}</td>
 		</tr>	
 	</tbody>
 		</c:forEach>
@@ -168,11 +168,14 @@ h1, p {
 			<a class ="button" href="insert.do">학생 성적 입력 </a>
 		</tr>
 		<tr>
-			<td>학생 조회수 : ${Counts }</td>
+			<td>교수 조회수 : ${proCount }</td>
 		</tr>
 		</table>
 </div>	
 
+<script type="text/javascript">
+alert('${message}');
 
+</script>
 </body>
 </html>

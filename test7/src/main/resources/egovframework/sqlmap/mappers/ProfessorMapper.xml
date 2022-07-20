@@ -4,6 +4,19 @@
 	<select id="getProfessor" resultType="map">
 		SELECT * FROM professor ORDER BY p_idx ASC
 	</select>
-
 	
+	<select id="pro_getCount" resultType="int">
+		SELECT count(*) FROM professor 
+	</select>
+	
+	<select id="progetidx" resultType="egovframework.example.dto.Professor" parameterType="egovframework.example.dto.Professor">
+		SELECT p_idx FROM professor WHERE   p_name=#{p_name} AND p_password=#{p_password}
+	</select>
+	
+	<select id="selectPscStudent" resultType="map" parameterType="int">
+		SELECT s.idx,s.psc_idx,s.name,s.department,s.address ,s.gender ,s.score ,s.grade  
+		FROM student s ,professor p 
+		WHERE s.psc_idx = p.p_idx AND s.psc_idx = #{p_idx} 
+	</select>
+
 </mapper>

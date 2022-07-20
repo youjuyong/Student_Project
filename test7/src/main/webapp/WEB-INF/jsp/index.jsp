@@ -128,7 +128,7 @@ h1, p {
 <header>
   <h1>Brand</h1>
   <nav>
-    <span><a class="student_head" href="professor/pro_list.do">교수 리스트</a></span>
+    <span><a class="student_head" href="login.do">교수 리스트</a></span>
   </nav>
 </header>
 <div class="basic4">
@@ -151,7 +151,7 @@ h1, p {
 	<tbody>
 		<tr>	
 			<td>${student_list.IDX}</td>
-			<td><a href="detail.do?idx=${student_list.IDX}&address=${student_list.ADDRESS}&score=${student_list.SCORE}">${student_list.NAME}</a></td>
+			<td><a href="student/detail.do?idx=${student_list.IDX}&psc_idx=${student_list.PSC_IDX}&name=${student_list.NAME}&department=${student_list.DEPARTMENT}&address=${student_list.ADDRESS}&gender=${student_list.GENDER}&score=${student_list.SCORE}&grade=${student_list.GRADE}">${student_list.NAME}</a></td>
 			<td>${student_list.DEPARTMENT}</td>
 			<td>${student_list.ADDRESS}</td>
 			<td>${student_list.GENDER}</td>
@@ -166,7 +166,7 @@ h1, p {
 		<table>
 	
 		<tr>
-			<a class ="button" href="insert.do">학생 성적 입력 </a>
+			<a class ="button" href="student/insert.do">학생 성적 입력 </a>
 		</tr>
 		<tr>
 			<td>학생 조회수 : ${Counts }</td>

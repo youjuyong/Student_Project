@@ -149,6 +149,10 @@ function check()
 		<td><input type="text" name="idx"/></td>
 	</tr>
 	<tr>
+		<th><label> 지도교수 번호 :</label></th>
+		<td><input type="text" name="psc_idx"/></td>
+	</tr>
+	<tr>
 		<th><label> 이름 :</label></th>
 		<td><input type="text" name="name"  maxlength="15"/></td>
 	</tr>

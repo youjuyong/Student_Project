@@ -34,27 +34,16 @@ table {
   overflow: hidden;
 }
 
-th {
-  text-align: left;
-}
-  
 thead {
   font-weight: bold;
   color: #fff;
   background: #73685d;
 }
   
-td {
+ td, th {
   padding: 1em .5em;
   vertical-align: middle;
-  text-align:center;
-}
-th {
-  font-weight: bold;
-  color: #fff;
-  background: #73685d;
-  text-align:center;
-
+   text-align:center;
 }
   
  td {
@@ -110,56 +99,78 @@ a {
   
   
   }
-  div.mar{
-  	margin-top:25px;
+  a{
+  color:black;
   }
-
+header {  
+  height: 75px;
+  padding: 1rem;
+  color: white;
+  background: #73685d;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+* {
+  box-sizing: border-box;
+}
+h1, p {
+  margin: 0;
+}
+.basic4{
+	margin:20px;
+}
 </style>
-
 </head>
 <body>
-<h1>학생 디테일 페이지입니다!!!!</h1>
-
+<header>
+  <h1>Brand</h1>
+  <nav>
+   	<span><a class="button" href="#" onClick="history.go(-1);">메인으로</a></span>
+  </nav>
+</header>
+<div class="basic4">
+	<h1>${p_name} 교수님 학생 리스트입니다!!!</h1>
+</div>
 <div align="center">
 	<table border=1 width=700>
 	<thead>
-		<tbody>
 			<tr>
 				<th>학생번호</th>
-				<td>${bean.idx}</td>
-			</tr>
-			<tr>	
-				<th>지도교수</th>
-				<td>${p_name}</td>
-			</tr>	
-			<tr>	
 				<th>이름</th>
-				<td>${bean.name}</td>
-			</tr>	
 				<th>학부</th>
-				<td>${bean.department}</td>
-			<tr>
 				<th>주소</th>
-				<td>${bean.address}</td>
-			</tr>
 				<th>성별</th>
-				<td>${bean.gender}</td>
-			<tr>
 				<th>성적</th>
-				<td>${bean.score}</td>
-			</tr>
-			<tr>
 				<th>학점</th>
-				<td>${bean.grade}</td>
 			</tr>
-		</tbody>
+	</thead>
+		<c:forEach items="${prostu_list}" var="professor_list" varStatus="i">
+	<tbody>
+		<tr>	
+			<td>${professor_list.IDX}</td>
+			<td><a href="student_select.do?p_idx=${professor_list.P_IDX}&ps_idx=${professor_list.PS_IDX}">${professor_list.NAME}</a></td>
+			<td>${professor_list.DEPARTMENT}</td>
+			<td>${professor_list.ADDRESS}</td>
+			<td>${professor_list.GENDER}</td>
+			<td>${professor_list.SCORE}</td>
+			<td>${professor_list.GRADE}</td>
+		</tr>	
+	</tbody>
+		</c:forEach>
 	</table>
-<div class="mar">
-	<a class="button" href="update.do?idx=${bean.idx}&address=${bean.address}&score=${bean.score}">학생 정보 수정</a>
- 	<a class="button" href="${pageContext.request.contextPath }">홈</a></td>
- 	<a class="button" href="delete.do?idx=${idx}" >학생 정보 삭제</a>
 </div>
-</div>
-
+<div class="basic">
+		<table>
+	
+		<tr>
+			<a class ="button" href="insert.do">학생 성적 입력 </a>
+		</tr>
+		<tr>
+			<td>교수 조회수 : ${proCount }</td>
+		</tr>
+		</table>
+</div>	
 </body>
 </html>

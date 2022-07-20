@@ -13,4 +13,7 @@ public interface BoardService {
 	void updateStudent(Board board);
 	void deleteStudent(int idx);
 	String gradeCalcu(int score);
+	
+	String getpName(int psc_idx);
+	
 }

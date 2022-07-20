@@ -64,5 +64,12 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 
+	@Override
+	public String getpName(int psc_idx) {
+		// TODO Auto-generated method stub
+		return query.selectOne("getpname", psc_idx);
+	}
+
+
 	
 }

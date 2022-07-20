@@ -73,4 +73,10 @@ public class BoardServiceImpl implements BoardService {
 			
 			return grade;
 		}
+
+		@Override
+		public String getpName(int psc_idx) {
+			// TODO Auto-generated method stub
+			return 	boardDAO.getpName(psc_idx);
+		}
 }

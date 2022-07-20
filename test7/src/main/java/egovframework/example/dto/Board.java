@@ -3,6 +3,7 @@ package egovframework.example.dto;
 
 public class Board {
 	private int idx;
+	private int psc_idx;
 	private String name;
 	private String department;
 	private String address;
@@ -17,6 +18,12 @@ public class Board {
 		this.grade=grade;
 	}
 	
+	public int getPsc_idx() {
+		return psc_idx;
+	}
+	public void setPsc_idx(int psc_idx) {
+		this.psc_idx = psc_idx;
+	}
 	public int getIdx() {
 		return idx;
 	}
@@ -61,7 +68,8 @@ public class Board {
 	}
 	@Override
 	public String toString() {
-		return "Board [idx=" + idx + ", name=" + name + ", department=" + department + ", address=" + address
-				+ ", gender=" + gender + ", score=" + score + ", grade=" + grade + "]";
+		return "Board [idx=" + idx + ", psc_idx=" + psc_idx + ", name=" + name + ", department=" + department
+				+ ", address=" + address + ", gender=" + gender + ", score=" + score + ", grade=" + grade + "]";
 	}
+	
 }

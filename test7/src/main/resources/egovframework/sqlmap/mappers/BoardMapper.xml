@@ -12,6 +12,7 @@
 	<insert id="insertStudent" parameterType="egovframework.example.dto.Board" >
 	INSERT INTO student(
 		idx,
+		psc_idx,
 		name,
 		department,
 		address,
@@ -21,6 +22,7 @@
 		) 
 	values(
 		#{idx},
+		#{psc_idx},
 		#{name},
 		#{department},
 		#{address},
@@ -41,5 +43,11 @@
 	<delete id="deleteStudent" parameterType="int">
 		DELETE FROM student WHERE idx=#{idx}
 	</delete>
+	
+	<select id="getpname" resultType="String" parameterType="int">
+		SELECT DISTINCT p.p_name 
+		FROM STUDENT s ,PROFESSOR p 
+		WHERE s.psc_idx = p.p_idx AND s.psc_idx=#{psc_idx}
+	</select>
 	
 </mapper>
