@@ -39,7 +39,7 @@ public class HomeController {
     	
     	model.addObject("boards",boards);
     	model.addObject("Counts",totalCount);
-    	model.setViewName("index");
+    	model.setViewName("study");
     	
         return model;
         

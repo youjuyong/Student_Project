@@ -150,7 +150,7 @@ h1, p {
 	<tbody>
 		<tr>	
 			<td>${professor_list.IDX}</td>
-			<td><a href="student_select.do?p_idx=${professor_list.P_IDX}&ps_idx=${professor_list.PS_IDX}">${professor_list.NAME}</a></td>
+			<td><a href="pro_student_detail.do?idx=${professor_list.IDX}&psc_idx=${professor_list.PSC_IDX}&name=${professor_list.NAME}&department=${professor_list.DEPARTMENT}&address=${professor_list.ADDRESS}&gender=${professor_list.GENDER}&score=${professor_list.SCORE}&grade=${professor_list.GRADE}">${professor_list.NAME}</a></td>
 			<td>${professor_list.DEPARTMENT}</td>
 			<td>${professor_list.ADDRESS}</td>
 			<td>${professor_list.GENDER}</td>

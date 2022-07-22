@@ -9,8 +9,8 @@
 		SELECT count(*) FROM professor 
 	</select>
 	
-	<select id="progetidx" resultType="egovframework.example.dto.Professor" parameterType="egovframework.example.dto.Professor">
-		SELECT p_idx FROM professor WHERE   p_name=#{p_name} AND p_password=#{p_password}
+	<select id="adgetidx" resultType="egovframework.example.dto.Admin" parameterType="egovframework.example.dto.Admin">
+		SELECT * FROM admin WHERE ad_id=#{ad_id} AND ad_password=#{ad_password}
 	</select>
 	
 	<select id="selectPscStudent" resultType="map" parameterType="int">
@@ -18,5 +18,9 @@
 		FROM student s ,professor p 
 		WHERE s.psc_idx = p.p_idx AND s.psc_idx = #{p_idx} 
 	</select>
-
+	
+	<select id="getproCount" resultType="int">
+		SELECT count(*) FROM professor
+	</select>
+	
 </mapper>

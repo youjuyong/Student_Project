@@ -25,7 +25,7 @@ public class LoginController {
 	public String login(@ModelAttribute ModelAndView model, Model models){
 		
 		
-		String message="교수님 로그인이 필요합니다.";
+		String message="관리자 로그인이 필요합니다.";
 
 		models.addAttribute("message", message);
 		

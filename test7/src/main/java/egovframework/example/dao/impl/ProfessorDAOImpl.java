@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import egovframework.example.dao.BoardDAO;
 import egovframework.example.dao.ProfessorDAO;
+import egovframework.example.dto.Admin;
 import egovframework.example.dto.Board;
 import egovframework.example.dto.Professor;
 
@@ -34,18 +35,23 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 	}
 
 	@Override
-	public Professor progetIdx(Professor pro) {
+	public Admin adgetIdx(Admin ad) {
 		// TODO Auto-generated method stub
 		
-		return query.selectOne("progetidx",pro);
+		return query.selectOne("adgetidx",ad);
 		
 	}
 
 	@Override
 	public List<Map> getPsclist(int p_idx) {
 		// TODO Auto-generated method stub
-		System.out.println(p_idx);
 		return query.selectList("selectPscStudent",p_idx);
+	}
+
+	@Override
+	public int getProCount() {
+		// TODO Auto-generated method stub
+		return query.selectOne("getproCount");
 	}
 
 

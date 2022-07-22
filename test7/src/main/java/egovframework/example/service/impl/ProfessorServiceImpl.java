@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import egovframework.example.dao.BoardDAO;
 import egovframework.example.dao.ProfessorDAO;
+import egovframework.example.dto.Admin;
 import egovframework.example.dto.Board;
 import egovframework.example.dto.Professor;
 import egovframework.example.service.BoardService;
@@ -33,15 +34,21 @@ public class ProfessorServiceImpl implements ProfessorService {
 		}
 
 		@Override
-		public Professor progetIdx(Professor pro) {
+		public Admin adgetIdx(Admin ad) {
 			// TODO Auto-generated method stub
-			return professorDAO.progetIdx(pro);
+			return professorDAO.adgetIdx(ad);
 		}
 
 		@Override
 		public List<Map> getPsclist(int p_idx) {
 			// TODO Auto-generated method stub
 			return professorDAO.getPsclist(p_idx);
+		}
+
+		@Override
+		public int getProCount() {
+			// TODO Auto-generated method stub
+			return professorDAO.getProCount();
 		}
 	    
 	   

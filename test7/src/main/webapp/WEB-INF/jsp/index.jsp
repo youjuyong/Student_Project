@@ -126,7 +126,7 @@ h1, p {
 </head>
 <body>
 <header>
-  <h1>Brand</h1>
+  <h1>학생</h1>
   <nav>
     <span><a class="student_head" href="login.do">교수 리스트</a></span>
   </nav>

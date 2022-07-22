@@ -125,13 +125,20 @@ h1, p {
 </head>
 <body>
 <header>
-  <h1>Brand</h1>
+  <h1>교수</h1>
   <nav>
-   	<span><a class="button" href="${pageContext.request.contextPath }">메인으로</a></span>
+   	<span><a class="button" href="logout.do">로그아웃</a></span>
   </nav>
 </header>
 <div class="basic4">
-	<h1>교수 리스트입니다.</h1>
+<c:choose>
+	<c:when test="${sessionScope.admin.ad_name eq null }">
+		<jsp:forward page="/login"/>
+	</c:when>
+	<c:otherwise>
+	<h1>${sessionScope.admin.ad_name }님 어서오세요 교수리스트 입니다.</h1>
+	</c:otherwise>
+</c:choose>
 </div>
 <div align="center">
 	<table border=1 width=700>
